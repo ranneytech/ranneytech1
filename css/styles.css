@@ -1,0 +1,67 @@
+/* Define your main font */
+.poppins-font {
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Apply uppercase text transformation */
+.text-uppercase {
+    text-transform: uppercase;
+}
+
+/* Style for social icons */
+.social-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e6b20a;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    line-height: 40px;
+    margin: 5px;
+    text-decoration: none;
+}
+
+/* Center the icon inside the circle */
+.social-icon i {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Position the icons horizontally */
+.icons {
+    display: flex;
+    align-items: center;
+}
+
+/* Yellow text color */
+.yellow-text {
+    color: #e6b20a;
+    margin-left: 10px; /* Add some spacing between icons and time */
+}
+.audio-icon {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: #e6b20a;
+    color: white;
+    font-size: 24px;
+    text-align: center;
+    line-height: 40px;
+    margin-left: 10px; /* Add spacing */
+    text-decoration: none;
+}
+
+/* Align the audio icon vertically */
+.audio-icon i {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* Hide the audio element by default */
+#audio {
+    display: none;
+}
+/* particles.js container */
