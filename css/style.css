@@ -288,6 +288,7 @@ body.light hr.separator {
     background: #eee;
     border-bottom: 1px solid #ddd;
   }
+  
 
   body.light #menuToggle {
     border: 0;
@@ -1635,14 +1636,6 @@ body.light hr.separator {
 
   .portfolio .slideshow nav {
     height: 62px;
-  }
-
-  .blog .main-content {
-    padding-bottom: 55px;
-  }
-
-  .blog-post article h1 {
-    font-size: 25px;
   }
 
   .separator.mt-1 {

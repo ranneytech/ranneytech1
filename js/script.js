@@ -1,5 +1,6 @@
 const typingTxt = document.getElementById('typing-txt');
 const currentTimeElement = document.getElementById('current-time');
+
 const audioControl = document.getElementById('audio-control');
 const audio = document.getElementById('audio');
 const words = ['Freelancer', 'Student', 'Web Developer','Programmer'];
@@ -28,6 +29,35 @@ function typeText() {
     setTimeout(typeText, isDeleting ? 50 : 150);
 }
 function updatePhilippinesTime() {
+    const philippinesOffset = 8;
+    const daysOfWeek = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+    const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'June', 'July', 'Aug', 'Sept', 'Oct', 'Nov', 'Dec'];
+
+
+    // GMT+8 (Philippines Time)
+    const now = new Date();
+    const localTime = now.getTime();
+    const localOffset = now.getTimezoneOffset() / 60;
+    const utc = localTime + (localOffset * 60 * 60 * 1000);
+    const philippinesTime = new Date(utc + (philippinesOffset * 60 * 60 * 1000));
+
+    const dayOfWeek = philippinesTime.getDay();
+    const monthIndex = philippinesTime.getMonth();
+    const dayOfMonth = philippinesTime.getDate();
+    const year = philippinesTime.getFullYear();
+    const hours24 = philippinesTime.getHours();
+    const ampm = hours24 >= 12 ? 'PM' : 'AM';
+    const hours12 = hours24 % 12 || 12;
+    const minutes = philippinesTime.getMinutes().toString().padStart(2, '0');
+    const seconds = philippinesTime.getSeconds().toString().padStart(2, '0');
+
+    /*const month = (philippinesTime.getMonth() + 1).toString().padStart(2, '0');
+    const day = philippinesTime.getDate().toString().padStart(2, '0');
+    */
+    currentTimeElement.textContent = `${hours12}:${minutes}:${seconds} ${ampm} ${daysOfWeek[dayOfWeek]} ${months[monthIndex]} ${dayOfMonth} ${year}`;
+}
+/*
+function updatePhilippinesTime() {
     const philippinesOffset = 8; // GMT+8 (Philippines Time)
     const now = new Date();
     const localTime = now.getTime();
@@ -40,8 +70,12 @@ function updatePhilippinesTime() {
     const hours12 = hours24 % 12 || 12;
     const minutes = philippinesTime.getMinutes().toString().padStart(2, '0');
     const seconds = philippinesTime.getSeconds().toString().padStart(2, '0');
+    const month = (philippinesTime.getMonth() + 1).toString().padStart(2, '0');
+    const day = philippinesTime.getDate().toString().padStart(2, '0');
+    const year = philippinesTime.getFullYear();
     currentTimeElement.textContent = ` ${hours12}:${minutes}:${seconds} ${ampm}`;
 }
+*/
 
 audioControl.addEventListener('click', () => {
     if (audio.paused) {
@@ -54,4 +88,22 @@ audioControl.addEventListener('click', () => {
 typeText();
 updatePhilippinesTime();
 setInterval(updatePhilippinesTime, 1000);
-// Particles JS
+
+/*
+function format12HourTime(date) {
+    const options = { hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: true };
+    return date.toLocaleString('en-US', options);
+}
+
+function updatePhilippinesTime() {
+    const philippinesOffset = 8; // GMT+8 (Philippines Time)
+    const now = new Date();
+    const localTime = now.getTime();
+    const localOffset = now.getTimezoneOffset() / 60;
+    const utc = localTime + (localOffset * 60 * 60 * 1000);
+    const philippinesTime = new Date(utc + (philippinesOffset * 60 * 60 * 1000));
+
+    const formattedTime = format12HourTime(philippinesTime);
+    currentDateTimeElement.textContent = `Philippines Time: ${formattedTime}`;
+}
+*/
