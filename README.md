@@ -1,6 +1,3 @@
-[![@ranneytech](https://raw.githubusercontent.com/ranneytech/ranneytech/main/assets/1.gif)](https://facebook.com/ranneytech)
-------------------------------------------- 
-
 # 💫 About Me:
 Im BSIT Student
 
